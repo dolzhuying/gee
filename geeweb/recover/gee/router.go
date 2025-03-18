@@ -53,6 +53,7 @@ func (r *router) getRoute(method string, path string) (*node, map[string]string)
 		return nil, nil
 	}
 
+	//返回底层带有pattern的节点
 	n := root.search(searchParts, 0)
 
 	if n != nil {

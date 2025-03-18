@@ -9,15 +9,15 @@ import (
 type H map[string]interface{}
 
 type Context struct {
-	Writer http.ResponseWriter
-	Req    *http.Request
-	Path   string
-	Method string
-	Params map[string]string
+	Writer     http.ResponseWriter
+	Req        *http.Request
+	Path       string
+	Method     string
+	Params     map[string]string
 	StatusCode int
-	handlers []HandlerFunc
-	index    int //记录执行到第几个中间件
-	engine *Engine
+	handlers   []HandlerFunc
+	index      int //记录执行到第几个中间件
+	engine     *Engine
 }
 
 func newContext(w http.ResponseWriter, req *http.Request) *Context {
